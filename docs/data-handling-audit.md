@@ -1,0 +1,52 @@
+# 데이터 취급 점검 기록
+
+점검일: 2026년 6월 2일
+
+이 문서는 현재 앱 코드의 실제 데이터 처리 방식과 개인정보처리방침, Play Console 데이터 보안 초안이 일치하는지 확인하기 위한 내부 체크리스트입니다. 기능이 추가되거나 바뀌면 이 문서와 개인정보처리방침을 함께 다시 확인합니다.
+
+## 현재 앱 데이터 처리 요약
+
+| 기능 | 실제 저장/전송 위치 | 현재 처리방침 반영 |
+| --- | --- | --- |
+| 오늘의 웃음 사진 | 기기 내부 파일 저장소, SQLite 기록 | 반영됨 |
+| 웃음 판별 결과 | 기기 내부 SQLite, 친구 도전 결과 일부는 Firestore | 반영됨 |
+| 얼굴/웃음 판별 | ML Kit 기반 기기 내 판별 | 반영됨 |
+| 친구 프로필 | 기기 내부 SQLite, Firebase Firestore | 반영됨 |
+| 초대 코드 | 기기 내부 SQLite, Firebase Firestore `inviteCodes` | 반영됨 |
+| 친구 요청 | Firebase Firestore | 반영됨 |
+| 랭킹 점수 공개 여부 | 기기 내부 SQLite, Firebase Firestore 사용자 문서 | 반영됨 |
+| 친구 랭킹 점수 | Firebase Firestore, 공개 설정이 켜진 친구만 조회 | 반영됨 |
+| 친구에게 보내는 웃긴 사진 | Firebase Storage `funny-challenges` | 반영됨 |
+| 웃긴 사진 반응 결과 | Firebase Firestore | 반영됨 |
+| 사용자가 선택한 반응 사진 | 사용자가 전송 토글을 켠 경우 Firebase Storage `funny-reactions` | 반영됨 |
+| GIF 생성 파일 | 기기 내부 파일 저장소, 사용자가 직접 저장/공유 | 반영됨 |
+| 알림 시간/범위 설정 | 기기 내부 SQLite | 반영됨 |
+| Firebase 익명 인증 UID | Firebase Auth, Firestore 문서 식별에 사용 | 2026-06-02 보강함 |
+| 위치, 연락처, 결제, 건강, 마이크 음성 | 현재 사용하지 않음 | 반영됨 |
+
+## 보안 점검
+
+- Android 배포 APK에서 `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, `SYSTEM_ALERT_WINDOW`, `RECORD_AUDIO` 권한은 제거 대상으로 설정되어 있습니다.
+- 앱은 카메라, 알림, 인터넷 권한을 사용합니다.
+- 친구 기능 데이터는 Firebase Auth 익명 로그인 후 Firestore/Storage 보안 규칙으로 접근을 제한합니다.
+- Firebase Storage의 웃긴 사진 및 반응 사진은 송신자와 수신자만 읽을 수 있도록 제한되어 있습니다.
+- 개인 웃음 기록 사진은 기본적으로 Firebase에 자동 업로드하지 않습니다.
+
+## 기능 변경 시 처리방침 업데이트가 필요한 경우
+
+다음 작업을 할 때는 사용자에게 먼저 알리고, `docs/privacy-policy.md`, `docs/index.html`, `docs/play-store-data-safety-draft.md`를 업데이트해야 합니다.
+
+- 개인 웃음 사진을 서버나 클라우드에 백업하는 기능 추가
+- 친구가 아닌 사용자에게 사진이나 점수를 공개하는 기능 추가
+- SNS 로그인, Google/Apple/Kakao 로그인 등 계정 연동 추가
+- 연락처 접근, 위치 기반 알림, 주소록 친구 찾기 추가
+- 광고, 앱 내 결제, 구독, 후원, 유료 기능 추가
+- 분석 도구, 크래시 리포팅, 광고 SDK, 푸시 마케팅 SDK 추가
+- 사용자의 기기 갤러리 전체 접근 또는 사진/동영상 권한 범위 확대
+- 마이크, 음성, 동영상 촬영, 건강 정보 등 새로운 민감 데이터 처리 추가
+- 데이터 삭제 방식, 보관 기간, Firebase 저장 구조 변경
+- 만 13세 미만 아동을 대상으로 하는 기능 또는 문구 추가
+
+## 현재 결론
+
+현재 앱의 데이터 취급 방식은 개인정보처리방침 및 Play Console 데이터 보안 초안과 대체로 일치합니다. 2026년 6월 2일 점검에서 Firebase 익명 사용자 ID와 갤러리에서 선택한 웃긴 사진에 대한 설명을 개인정보처리방침에 더 명확히 추가했습니다.
