@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | 오늘의 웃음 사진 | 기기 내부 파일 저장소, SQLite 기록 | 반영됨 |
 | 웃음 판별 결과 | 기기 내부 SQLite, 친구 도전 결과 일부는 Firestore | 반영됨 |
-| 얼굴/웃음 판별 | ML Kit 기반 기기 내 판별 | 반영됨 |
+| 얼굴/웃음 판별 | 기기 내 판별, 생체식별/본인확인 목적 아님 | 반영됨 |
 | 친구 프로필 | 기기 내부 SQLite, Firebase Firestore | 반영됨 |
 | 초대 코드 | 기기 내부 SQLite, Firebase Firestore `inviteCodes` | 반영됨 |
 | 사용자가 친구에게 붙인 개인 이름 | 기기 내부 SQLite, 본인 전용 Firebase Firestore 친구 문서 | 반영됨 |
