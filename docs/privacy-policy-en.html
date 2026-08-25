@@ -20,7 +20,7 @@
   <body>
     <main>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective: August 22, 2026 · <a href="./">한국어</a></p>
+      <p class="meta">Effective: August 25, 2026 · <a href="./">한국어</a> · <a href="./terms-en.html">Terms</a></p>
       <p>DailySmile Studio provides this policy to explain how <strong>Big smile, Good fortune</strong> handles personal information and photos.</p>
 
       <h2>1. Information we process</h2>
@@ -33,6 +33,7 @@
         <li>Photos: Today's Smile photos, funny photos sent to friends, and reaction photos that you choose to send.</li>
         <li>Ads and usage: information Google Mobile Ads SDK may process, including IP address, app interactions such as launches, taps and ad views, diagnostics, advertising ID, app set ID, and other device or account identifiers.</li>
         <li>Daily send limits: successful sends per friend per Korean calendar day and random session identifiers associated with ad request, completion, and use status.</li>
+        <li>Safety and consent: age-14-or-older confirmation (the app does not ask for or collect a date of birth), photo-sharing rules consent, reaction-analysis consent, blocked users, report details and status, short-lived rate-limit records, and Firebase App Check verification data.</li>
       </ul>
       <p>The app itself does not collect GPS or precise location. Google Mobile Ads SDK may process an IP address and infer approximate location from it. The app does not collect contacts, payment information, health information, or microphone audio.</p>
 
@@ -41,6 +42,7 @@
       <p>Smile dates and score summaries may be stored on the server so your total score and streak can be restored when you sign in on another device. These records do not include personal smile-photo originals or local file paths.</p>
       <p>Face and smile detection is performed on-device to provide the app feature. It is not used to verify identity or identify a person. Smile probability and face count are used only for the personal smile record.</p>
       <p>Only funny photos you choose to send to a friend and reaction photos you choose to send may be stored in Firebase Storage. Access is limited to the relevant sender and recipient. These files become eligible for automatic deletion seven days after upload; completion may be delayed by server processing.</p>
+      <p>Before first opening a friend's photo, the app separately explains and obtains consent for about five seconds of on-device front-camera smile analysis and automatic sharing of the result and smile score with the sender. The photo, camera, and countdown do not start before consent. A reaction photo is uploaded only when the user separately chooses to send it.</p>
 
       <h2>3. Why we use information</h2>
       <ul>
@@ -63,22 +65,23 @@
       <p>Firebase user IDs are not sent to AdMob to verify ad completion. Only a random ad-session identifier that does not directly identify the user is sent as server-side verification custom data. If you use the share feature, the selected file or text is provided to the external app or service you choose, and its privacy policy applies.</p>
 
       <h2>6. Retention and deletion</h2>
+      <p>Account profiles, friendships, private friend names, consent records, and block lists are kept while the account is active and deleted with the account. Reports may be retained for up to one year for safety and dispute handling, or longer where legally required or necessary for an active dispute. Rate-limit records expire after a short security-review period.</p>
       <p>Per-friend send access becomes eligible for deletion after the relevant Korean calendar day ends. Daily usage and SSV ad-session links become eligible seven days after that day ends. AdMob transaction identifiers used to prevent duplicate rewards become eligible 30 days after verification. Firestore TTL deletion may take approximately 24 hours after expiration.</p>
       <p>After identity verification, <strong>Settings &gt; Account management &gt; Delete account</strong> deletes the app's Firebase account and associated profile, invite code, friend relationships and requests, private friend names, notification settings and tokens, smile dates and score summaries, score sharing setting, daily usage, ad-session and transaction records, and retained friend-feature photos. It does not delete your Google account.</p>
       <p>In-app deletion also removes this device's app-specific smile records, personal smile photos, generated GIFs, and settings. Files exported to the phone's photo library, files shared with other apps, and local files on other offline devices cannot be deleted remotely.</p>
       <p>If you cannot use the app, request deletion through <a href="./data-deletion-en.html">the account and data deletion page</a>. External requests are normally processed within 30 days after identity verification.</p>
 
       <h2>7. Security</h2>
-      <p>DailySmile Studio uses Firebase Authentication and Firestore and Storage Security Rules to restrict data access. Server writes are restricted to authenticated users and access is limited by the user's Firebase ID.</p>
+      <p>DailySmile Studio uses Firebase Authentication, Firestore and Storage Security Rules, and Firebase App Check with Android Play Integrity to restrict data access and abnormal app requests. App Check supplements but does not replace authentication and authorization.</p>
 
       <h2>8. Children's privacy</h2>
-      <p>The app is not primarily directed to children under 13. A parent or guardian who believes a child's personal information was collected may request deletion using the email below.</p>
+      <p>You must be at least 14 years old to use the app. Before sign-in, users confirm that they are at least 14 years old. The app does not ask for or collect a date of birth. A parent or guardian who believes information from a child under 14 was collected may request deletion.</p>
 
       <h2>9. Changes</h2>
       <p>We may update this policy when features, laws, or operating practices change. Material changes will be announced in the app or on the distribution page.</p>
 
       <h2>10. Contact</h2>
-      <div class="contact"><p>Operator: DailySmile Studio</p><p>Email: dailysmile.help@gmail.com</p></div>
+      <div class="contact"><p>Privacy and service contact: Operator of DailySmile Studio</p><p>Email: dailysmile.help@gmail.com</p><p><a href="./terms-en.html">Terms and Community Rules</a></p></div>
     </main>
   </body>
 </html>
