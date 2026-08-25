@@ -42,7 +42,7 @@
       <p>Smile dates and score summaries may be stored on the server so your total score and streak can be restored when you sign in on another device. These records do not include personal smile-photo originals or local file paths.</p>
       <p>Face and smile detection is performed on-device to provide the app feature. It is not used to verify identity or identify a person. Smile probability and face count are used only for the personal smile record.</p>
       <p>Only funny photos you choose to send to a friend and reaction photos you choose to send may be stored in Firebase Storage. Access is limited to the relevant sender and recipient. These files become eligible for automatic deletion seven days after upload; completion may be delayed by server processing.</p>
-      <p>Before first opening a friend's photo, the app separately explains and obtains consent for about five seconds of on-device front-camera smile analysis and automatic sharing of the result and smile score with the sender. The photo, camera, and countdown do not start before consent. A reaction photo is uploaded only when the user separately chooses to send it.</p>
+      <p>Before first opening a friend's photo, the app separately explains and obtains consent for about five seconds of on-device front-camera smile analysis. The photo, camera, and countdown do not start before consent. After analysis, the app shows the result and smile score first. The result, score, and any selected reaction photo are sent to the sender only when the user chooses whether to include the photo and taps Send.</p>
 
       <h2>3. Why we use information</h2>
       <ul>
