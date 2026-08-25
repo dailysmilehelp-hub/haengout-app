@@ -54,10 +54,11 @@
         <li>Error handling, security, and abuse prevention.</li>
         <li>Showing a rewarded ad from the second successful attempt to make the same friend laugh in one Korean calendar day and enabling the send flow after verified completion.</li>
         <li>Ad delivery, ad performance measurement, analytics, and ad-fraud prevention.</li>
+        <li>Confirming photo-sharing rules consent, handling safety concerns submitted to customer support, blocking users, limiting repeated requests, and verifying app integrity.</li>
       </ul>
 
       <h2>4. Server storage</h2>
-      <p>Firebase Authentication stores the user ID, email address, and display name. Firestore may store the nickname, invite code, friend data, friend requests, notification setting, per-device push token, platform and language code, smile-score sharing setting, smile dates and score summaries, daily send usage, ad-session and send-access state, and AdMob transaction identifiers used to prevent duplicate rewards. Firebase Storage may store friend-feature photos described above. Personal smile-photo originals, GIFs, local file paths, and scheduled Today's Smile alarms are not automatically stored on the server.</p>
+      <p>Firebase Authentication stores the user ID, email address, and display name. Firestore may store the nickname, invite code, friend data and private friend names, friend requests, notification setting, per-device push token, platform and language code, smile-score sharing setting, smile dates and score summaries, daily send usage, ad-session and send-access state, and AdMob transaction identifiers used to prevent duplicate rewards. Firebase Storage may store friend-feature photos described above. Safety-related server data may include photo-sharing rules consent, block lists, safety concerns submitted to customer support, short-lived rate-limit records, and App Check verification data. Personal smile-photo originals, GIFs, local file paths, and scheduled Today's Smile alarms are not automatically stored on the server.</p>
 
       <h2>5. Third-party services</h2>
       <p>The app uses Google Firebase for authentication, data storage, and notifications. It uses Google AdMob and Google Mobile Ads SDK for rewarded ads. The SDK may automatically collect and share IP address, app interactions, diagnostics, advertising ID, app set ID, and other device or account identifiers with Google for ad delivery, analytics, and fraud prevention.</p>
