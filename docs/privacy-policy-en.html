@@ -20,7 +20,7 @@
   <body>
     <main>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective: September 13, 2026 · <a href="./">한국어</a> · <a href="./terms-en.html">Terms</a></p>
+      <p class="meta">Effective: September 16, 2026 · <a href="./">한국어</a> · <a href="./terms-en.html">Terms</a></p>
       <p>DailySmile Studio provides this policy to explain how <strong>Big smile, Good fortune</strong> handles personal information and photos.</p>
 
       <h2>1. Information we process</h2>
@@ -34,6 +34,7 @@
         <li>Ads and usage: information Google Mobile Ads SDK may process, including IP address, app interactions such as launches, taps and ad views, diagnostics, advertising ID, app set ID, and other device or account identifiers.</li>
         <li>Daily send limits: successful sends per friend per Korean calendar day and random session identifiers associated with ad request, completion, and use status.</li>
         <li>Safety and consent: age-14-or-older confirmation (the app does not ask for or collect a date of birth), photo-sharing rules consent, reaction-analysis consent, blocked users, the contents and status of safety concerns submitted to customer support, short-lived rate-limit records, and Firebase App Check verification data.</li>
+        <li>In-app photo reports: the reporter and reported user's UIDs, the reported challenge ID, selected reason, submission time, review status, and intended retention expiry. The operator processes these records in Firestore for service safety and handling inappropriate content. Reporting does not upload another photo, create a separate photo copy, or send the private name you assigned to a friend.</li>
       </ul>
       <p>The app itself does not collect GPS or precise location. Google Mobile Ads SDK may process an IP address and infer approximate location from it. The app does not collect contacts, payment information, health information, or microphone audio.</p>
 
@@ -68,13 +69,14 @@
 
       <h2>6. Retention and deletion</h2>
       <p>Account profiles, friendships, private friend names, consent records, and block lists are kept while the account is active and deleted with the account. If a safety concern is submitted to customer support, that record may be retained for up to one year for safety and dispute handling, or longer where legally required or necessary for an active dispute. Rate-limit records expire after a short security-review period.</p>
+      <p>In-app photo reports follow the same safety-record retention criteria and may be retained on that limited basis after account deletion. Reporting does not extend the original photo's retention period. On the photo viewing screen, open <code>⋯ &gt; Report</code> and select a reason to submit a report. Blocking the sender is a separate, optional choice.</p>
       <p>Per-friend send access becomes eligible for deletion after the relevant Korean calendar day ends. Daily usage and SSV ad-session links become eligible seven days after that day ends. AdMob transaction identifiers used to prevent duplicate rewards become eligible 30 days after verification. Firestore TTL deletion may take approximately 24 hours after expiration.</p>
       <p>After identity verification with the current sign-in method, <strong>Settings &gt; Account management &gt; Delete account</strong> deletes the app's Firebase account and associated profile, invite code, friend relationships and requests, private friend names, notification settings and tokens, smile dates and score summaries, score sharing setting, daily usage, ad-session and transaction records, and retained friend-feature photos. For Apple sign-in, the app first requests revocation of the Apple authorization using the code issued during in-app identity verification. It does not delete your Google Account or Apple Account itself.</p>
       <p>In-app deletion also removes this device's app-specific smile records, personal smile photos, generated GIFs, and settings. Files exported to the phone's photo library, files shared with other apps, and local files on other offline devices cannot be deleted remotely.</p>
       <p>If you cannot use the app, request deletion through <a href="./data-deletion-en.html">the account and data deletion page</a>. External requests are normally processed within 30 days after identity verification.</p>
 
       <h2>7. Security</h2>
-      <p>DailySmile Studio uses Firebase Authentication, Firestore and Storage Security Rules, and Firebase App Check with Android Play Integrity to restrict data access and abnormal app requests. App Check supplements but does not replace authentication and authorization.</p>
+      <p>DailySmile Studio uses Firebase Authentication and Firestore and Storage Security Rules to restrict access to user data. Firebase App Check is configured to use Android Play Integrity and iOS App Attest with DeviceCheck fallback as supplementary app-integrity signals. App Check supplements but does not replace authentication and authorization.</p>
 
       <h2>8. Children's privacy</h2>
       <p>You must be at least 14 years old to use the app. Before sign-in, users confirm that they are at least 14 years old. The app does not ask for or collect a date of birth. A parent or guardian who believes information from a child under 14 was collected may request deletion.</p>
